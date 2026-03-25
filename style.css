@@ -171,4 +171,42 @@ img{width: auto;
 h2{
     text-align: center;
 }
+@media (max-width: 768px) {
 
+  /* Structure principale */
+  body {
+    padding: 10px;
+  }
+
+  /* Sections principales */
+  section, div {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  /* Empilement des blocs */
+  .container, .row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px;
+  }
+
+  /* Images */
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Textes */
+  h1, h2, h3, p {
+    text-align: center;
+  }
+
+  /* Boutons */
+  button, a {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+    }
