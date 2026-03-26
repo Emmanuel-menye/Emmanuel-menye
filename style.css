@@ -177,7 +177,8 @@ h2 {
         display: block;
         text-align: center;
     }
-    . boxes,.galerie { flex-directoin: column;
+    . box,.galerie { flex-directoin: column !important;
                       gap:10px;
                       wrap:wrap;
+                    width: 200px;
 }
