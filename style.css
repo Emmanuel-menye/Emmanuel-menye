@@ -71,13 +71,13 @@ main h1{
     100% {opacity: 1;}
 }
 
-/* CONTAINER BOXES */
+/* CONTAINER BOXES - UPDATED TO GRID */
 .container{
-    display: flex;
-    justify-content: center;
+    display: grid;
     gap: 20px;
-    flex-wrap: wrap;
     padding: 40px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: start;
 }
 
 .box{
@@ -85,9 +85,9 @@ main h1{
     color: white;
     padding: 20px;
     border-radius: 15px;
-    width: 300px;
     text-align: center;
-    transition: 0.3s;
+    transition: transform 0.3s;
+    width: 100%;
 }
 
 .box:hover{
@@ -139,12 +139,13 @@ h2{
     .box{
         width: 90%;
     }
-    }
+}
 
 /* Desktop enhancements */
 @media (min-width: 769px) {
     main h1 { font-size: 3rem; }
-    .box { max-width: 30%; }
+    /* avoid forcing max-width to keep grid responsive */
+    .box { max-width: none; }
     nav { justify-content: space-evenly; }
 }
 
@@ -153,7 +154,7 @@ h2{
     body { padding: 10px; }
     .header { width: 100%; position: relative; }
     section, div { width: 100% !important; display: block !important; }
-    .container { flex-direction: column; gap: 1rem; padding: 1rem 0; }
+    .container { gap: 1rem; padding: 1rem 0; }
     h1, h2, h3, p { text-align: center; }
     button, a { width: 100%; display: block; text-align: center; }
     .box { max-width: 100%; flex-basis: auto; }
