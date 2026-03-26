@@ -151,6 +151,8 @@ h2 {
     body {
         padding: 10px;
     }
+    .header{ with 100%;
+           position fixed;}
     /* Sections principales */
     section, div {
         width: 100% !important;
@@ -180,5 +182,6 @@ h2 {
     . box,.galerie { flex-directoin: column !important;
                       gap:10px;
                       wrap:wrap;
-                    width: 200px;
+                    width: 100px;
+                    
 }
