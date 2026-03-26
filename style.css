@@ -13,6 +13,7 @@ header {
     align-items: center;
     align-self: center;
     border: transparent;
+    width:100%;
 }
 nav {
     background-color: #fff;
@@ -176,4 +177,7 @@ h2 {
         display: block;
         text-align: center;
     }
+    . boxes,.galerie { flex-directoin: column;
+                      gap:10px;
+                      wrap:wrap;
 }
