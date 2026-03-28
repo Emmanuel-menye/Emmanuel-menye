@@ -1,0 +1,44 @@
+[
+  {
+    "id": "p1",
+    "name": "Sac à dos urbain",
+    "price": 59.90,
+    "description": "Sac à dos élégant et résistant, idéal pour la ville et le travail.",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80"
+  },
+  {
+    "id": "p2",
+    "name": "Montre minimaliste",
+    "price": 129.00,
+    "description": "Montre au design épuré, verre saphir et bracelet en cuir.",
+    "image": "https://images.unsplash.com/photo-1519741490404-68d9a5a3f7f8?w=800&q=80"
+  },
+  {
+    "id": "p3",
+    "name": "Casque Bluetooth",
+    "price": 89.50,
+    "description": "Casque sans fil avec réduction de bruit et autonomie longue.",
+    "image": "https://images.unsplash.com/photo-1518441902111-2f1b9a4a1f8f?w=800&q=80"
+  },
+  {
+    "id": "p4",
+    "name": "Lampe de bureau LED",
+    "price": 34.20,
+    "description": "Lampe économique avec intensité réglable et port USB.",
+    "image": "https://images.unsplash.com/photo-1505691723518-36a44b7f9f4a?w=800&q=80"
+  },
+  {
+    "id": "p5",
+    "name": "Tasse isotherme",
+    "price": 19.99,
+    "description": "Tasse qui conserve la température, parfaite pour le café en déplacement.",
+    "image": "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?w=800&q=80"
+  },
+  {
+    "id": "p6",
+    "name": "Carnet A5",
+    "price": 9.50,
+    "description": "Carnet relié, papier de qualité pour prises de notes et croquis.",
+    "image": "https://images.unsplash.com/photo-1519222970733-f546218fa6d7?w=800&q=80"
+  }
+]

@@ -1,44 +1,146 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Boutique — Emmanuel Menye</title>
-  <meta name="description" content="Boutique en ligne - exemple" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boutique - Emmanuel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="site-header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <h1>Boutique d'Emmanuel</h1>
-      <button id="cart-toggle" class="cart-button" aria-expanded="false">Panier (<span id="cart-count">0</span>)</button>
+      <a class="navbar-brand" href="#">Boutique Emmanuel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#catalogue">Catalogue</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-outline-light me-2" id="btnAdmin" title="Admin (local)"><i class="bi bi-folder-plus"></i> Admin</button>
+          <button class="btn btn-primary position-relative" id="btnCart" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
+            <i class="bi bi-cart3"></i>
+            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-light py-5" id="home">
+    <div class="container text-center">
+      <h1 class="display-5">Bienvenue dans la boutique</h1>
+      <p class="lead">Site de démonstration responsive — panier local et checkout simulé.</p>
+      <a href="#catalogue" class="btn btn-primary">Voir les produits</a>
     </div>
   </header>
 
-  <main class="container">
-    <section id="products" class="products-grid" aria-label="Produits">
-      <!-- Produits injectés par JS -->
-    </section>
-
-    <aside id="cart" class="cart" aria-label="Panier" hidden>
-      <h2>Votre panier</h2>
-      <div id="cart-items"></div>
-      <div class="cart-summary">
-        <div>Total: <strong id="cart-total">0.00 €</strong></div>
-        <div class="cart-actions">
-          <button id="checkout" class="btn primary">Passer à la commande</button>
-          <button id="clear-cart" class="btn">Vider le panier</button>
+  <main class="container my-5">
+    <section id="catalogue">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Catalogue</h2>
+        <div>
+          <input id="search" class="form-control" placeholder="Rechercher un produit" style="width: 280px; display:inline-block"> 
         </div>
       </div>
-    </aside>
+      <div id="products" class="row g-4"></div>
+    </section>
+
+    <section id="about" class="mt-5">
+      <h2>À propos</h2>
+      <p>Ce site est une boutique en ligne statique créée pour démonstration. Le panier est sauvegardé dans le stockage local (localStorage). Le paiement est simulé.</p>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Emmanuel — Boutique exemple</p>
-    </div>
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container text-center">© 2026 Boutique Emmanuel — Tous droits réservés</div>
   </footer>
 
-  <script src="assets/js/shop.js" defer></script>
+  <!-- Product modal -->
+  <div class="modal fade" id="productModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">Produit</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img id="modalImage" src="" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+              <p id="modalDesc"></p>
+              <h4 id="modalPrice"></h4>
+              <div class="mb-3">
+                <label>Quantité</label>
+                <input id="modalQty" type="number" class="form-control" value="1" min="1">
+              </div>
+              <button id="addToCartBtn" class="btn btn-success">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas cart -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Votre panier</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div id="cartItems" class="mb-3"></div>
+      <div class="mt-auto">
+        <div class="d-flex justify-content-between mb-3">
+          <strong>Total :</strong>
+          <strong id="cartTotal">0 €</strong>
+        </div>
+        <button id="checkoutBtn" class="btn btn-primary w-100">Passer au paiement (simulé)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin modal (local only) -->
+  <div class="modal fade" id="adminModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Admin - Ajouter un produit (local)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Nom</label>
+            <input id="adminName" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Prix (en €)</label>
+            <input id="adminPrice" type="number" step="0.01" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Image (URL)</label>
+            <input id="adminImage" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea id="adminDesc" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="adminAddBtn" class="btn btn-success">Ajouter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

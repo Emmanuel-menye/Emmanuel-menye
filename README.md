@@ -1,16 +1,14 @@
-## Hi there 👋
+# Boutique Emmanuel — Site statique responsive
 
-<!--
-**Emmanuel-menye/Emmanuel-menye** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Site de démonstration responsive (HTML/CSS/JS) avec catalogue, galerie, panier local (localStorage) et checkout simulé.
 
-Here are some ideas to get you started:
+Comment utiliser:
+- Ouvrir index.html dans un navigateur (ou activer GitHub Pages sur la branche main).
+- Le panier est sauvegardé dans localStorage.
+- Le mode Admin permet d'ajouter des produits localement (stockés en localStorage) — les modifications sont locales au navigateur.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Remarques:
+- Aucun paiement réel n'est intégré. Pour un vrai paiement, intégrer Stripe/PayPal côté serveur ou via SDK.
+- Les images utilisent des URLs Unsplash.
+
+Si tu veux que je crée une branche séparée au lieu d'écraser index.html, dis-le-moi.
