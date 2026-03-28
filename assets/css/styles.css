@@ -1,0 +1,40 @@
+:root{
+  --bg:#f6f7fb; --card:#fff; --primary:#1f7ae0; --muted:#666;
+  --max-width:1100px; --radius:10px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#111;line-height:1.4}
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+.site-header{background:linear-gradient(90deg,#fff 0%,#f8fbff 100%);border-bottom:1px solid #e6e9ef}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:1rem 1rem}
+.site-header h1{font-size:1.2rem;margin:0}
+.cart-button{background:transparent;border:1px solid var(--primary);color:var(--primary);padding:.4rem .6rem;border-radius:6px;cursor:pointer}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:1rem 0}
+.product{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(15,20,40,0.06);display:flex;flex-direction:column}
+.product img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+.product h3{margin:.6rem 0 .2rem;font-size:1.05rem}
+.product p{color:var(--muted);font-size:.95rem;margin:0 .0 0.6rem;flex-grow:1}
+.price{font-weight:600;margin-bottom:.6rem}
+.btn{padding:.5rem .7rem;border-radius:8px;border:1px solid #d0d6df;background:#fff;cursor:pointer}
+.btn.primary{background:var(--primary);color:#fff;border-color:transparent}
+.cart{position:fixed;right:1.25rem;top:6rem;width:320px;max-height:70vh;overflow:auto;background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 10px 30px rgba(20,30,60,0.12)}
+.cart h2{margin:.2rem 0 .6rem}
+.cart-item{display:flex;gap:.6rem;align-items:center;padding:.4rem 0;border-bottom:1px dashed #eef2f6}
+.cart-item img{width:56px;height:56px;object-fit:cover;border-radius:6px}
+.qty{display:flex;gap:.4rem;align-items:center}
+.qty button{padding:.2rem .45rem}
+.cart-summary{margin-top:.6rem;display:flex;flex-direction:column;gap:.5rem}
+.cart-actions{display:flex;gap:.5rem;justify-content:space-between}
+.site-footer{padding:1rem;background:transparent;text-align:center;color:var(--muted);margin-top:2rem}
+
+/* responsive */
+@media (max-width:900px){
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .cart{right:.75rem;top:6.5rem;width:280px}
+}
+@media (max-width:600px){
+  .products-grid{grid-template-columns:1fr}
+  .site-header .container{flex-direction:column;gap:.6rem}
+  .cart{position:fixed;left:0;right:0;bottom:0;top:auto;width:100%;border-radius:12px 12px 0 0;max-height:60vh}
+}

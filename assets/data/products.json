@@ -1,0 +1,8 @@
+[
+  {"id":1,"name":"T‑shirt Emmanuel","price":19.99,"description":"T‑shirt coton, coupe standard.","image":"https://picsum.photos/seed/p1/800/600"},
+  {"id":2,"name":"Casquette stylée","price":14.50,"description":"Casquette unisexe, ajustable.","image":"https://picsum.photos/seed/p2/800/600"},
+  {"id":3,"name":"Affiche A3","price":9.00,"description":"Affiche haute qualité, papier mat.","image":"https://picsum.photos/seed/p3/800/600"},
+  {"id":4,"name":"Autocollant pack","price":4.50,"description":"Lot de 5 autocollants.","image":"https://picsum.photos/seed/p4/800/600"},
+  {"id":5,"name":"Sweat à capuche","price":39.00,"description":"Sweat confortable, plusieurs tailles.","image":"https://picsum.photos/seed/p5/800/600"},
+  {"id":6,"name":"Carte cadeau 20€","price":20.00,"description":"Carte cadeau valable 12 mois.","image":"https://picsum.photos/seed/p6/800/600"}
+]
