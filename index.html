@@ -1,64 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio — Emmanuel Menye</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Portfolio of Emmanuel Menye — presentation, work and gallery.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Boutique — Emmanuel Menye</title>
+  <meta name="description" content="Boutique en ligne - exemple" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Boutique d'Emmanuel</h1>
+      <button id="cart-toggle" class="cart-button" aria-expanded="false">Panier (<span id="cart-count">0</span>)</button>
+    </div>
+  </header>
 
-<div class="header" id="home">
-    <header>
-        <div class="log">
-            <img src="./logo.png" alt="Logo Emmanuel Menye">
+  <main class="container">
+    <section id="products" class="products-grid" aria-label="Produits">
+      <!-- Produits injectés par JS -->
+    </section>
+
+    <aside id="cart" class="cart" aria-label="Panier" hidden>
+      <h2>Votre panier</h2>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <div>Total: <strong id="cart-total">0.00 €</strong></div>
+        <div class="cart-actions">
+          <button id="checkout" class="btn primary">Passer à la commande</button>
+          <button id="clear-cart" class="btn">Vider le panier</button>
         </div>
-        <div class="name">
-            <h2>Portfolio</h2>
-        </div>
-    </header>
+      </div>
+    </aside>
+  </main>
 
-    <nav class="nav" aria-label="Main navigation">
-        <a href="#main">Home</a>
-        <a href="#about">About</a>
-        <a href="#galerie">Discover</a>
-    </nav>
-</div>
-
-<main id="main">
-    <h1>HI<br>AM<br>EMMANUEL MENYE</h1>
-
-    <a class="btn-more" href="https://www.facebook.com/franck.sterling.262815" target="_blank" rel="noopener noreferrer">See more</a>
-</main>
-
-<section class="container" id="about">
-    <div class="box">
-        <h3>Our goal</h3>
-        <p>We meet the demands of society in all categories.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Emmanuel — Boutique exemple</p>
     </div>
+  </footer>
 
-    <div class="box">
-        <h3>Happy clients</h3>
-        <p>More than 500k satisfied clients.</p>
-    </div>
-
-    <div class="box">
-        <h3>After-sales</h3>
-        <p>We provide after-sale services.</p>
-    </div>
-</section>
-
-<h2>Discover more</h2>
-
-<section class="galerie" id="galerie" aria-label="Image gallery">
-    <div class="boxes"><img src="https://via.placeholder.com/300" alt="Gallery image 1"></div>
-    <div class="boxes"><img src="https://via.placeholder.com/300" alt="Gallery image 2"></div>
-    <div class="boxes"><img src="https://via.placeholder.com/300" alt="Gallery image 3"></div>
-    <div class="boxes"><img src="https://via.placeholder.com/300" alt="Gallery image 4"></div>
-    <div class="boxes"><img src="https://via.placeholder.com/300" alt="Gallery image 5"></div>
-    <div class="boxes"><img src="https://via.placeholder.com/300" alt="Gallery image 6"></div>
-</section>
-
+  <script src="assets/js/shop.js" defer></script>
 </body>
 </html>
